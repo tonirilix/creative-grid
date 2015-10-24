@@ -1,11 +1,7 @@
-client/node_modules
-client/bower_components
 client/.sass-cache
-client/npm-debug.log
-client/.DS_Store
 
-
-server/node_modules
-
-
-*.DS_Store
+*npm-debug.log*
+*node_modules*
+*.DS_Store*
+*bower_components*
+*.tmp*
