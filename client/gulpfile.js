@@ -159,7 +159,7 @@ var _cssBuild = function() {
 var _lessBuild = function() {
     var sourceLess = './source/less';
     var targetCss = './source/css';
-    return gulp.src('bower_components/bootstrap-material-design/less/material.less')
+    return gulp.src('bower_components/bootstrap-material-design/less/material-fullpalette.less')
         .pipe(less())
         .pipe(gulp.dest(BUILD_DIR + '/css/vendor/'));
 };
