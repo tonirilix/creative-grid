@@ -21,7 +21,8 @@
     "pixi": "^3.0.7",
     "SoundJS": "^0.6.1",
     "stats.js": "latest",
-    "dat-gui": "^0.5.1"
+    "dat-gui": "^0.5.1",
+    "bootstrap-material-design": "0.3.0"
   },
   "overrides": {
     "modernizr": {
