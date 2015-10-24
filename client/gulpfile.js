@@ -79,7 +79,7 @@ if (argv.dist) {
 gulp.task('_connect', ['build'], function() {
     connect.server({
         root: [__dirname + '/' + BUILD_DIR],
-        port: 8080,
+        port: 8090,
         livereload: true,
         middleware: function() {
             return [
@@ -94,7 +94,7 @@ gulp.task('_connect', ['build'], function() {
 gulp.task('connect', function() {
     connect.server({
         root: [__dirname + '/' + BUILD_DIR],
-        port: 8080,
+        port: 8090,
         livereload: false,
         middleware: function() {
             return [
@@ -165,7 +165,7 @@ var _lessBuild = function() {
 };
 
 
-gulp.task('_css-build', ['_clean'], _cssBuild, _lessBuild);
+gulp.task('_css-build', ['_clean'], _cssBuild);
 gulp.task('_css-watch-build', _cssBuild);
 
 // build vendor css
