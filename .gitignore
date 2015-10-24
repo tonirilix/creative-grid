@@ -1,4 +1,11 @@
 client/node_modules
 client/bower_components
+client/.sass-cache
+client/npm-debug.log
+client/.DS_Store
+
+
 server/node_modules
-.DS_Store
+
+
+*.DS_Store
