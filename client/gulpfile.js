@@ -174,16 +174,11 @@ gulp.task('_css-watch-build', _cssBuild);
 
 // build vendor css
 var _cssVendorBuild = function() {    
-    /**
-     * TODO: Dunno whay bowerFiles is not finding *.css files in bower_components
-     * @type {Array}
-     */
-    var cssFiles = ['bower_components/bootstrap/dist/css/*'];
 
-    // if (bowerFiles('**/*.css').length === 0) {
-    //     return;
-    // }
-    console.log('XDXDXD', bowerFiles('**/*.css'));
+    if (bowerFiles('**/*.css').length === 0) {
+        return;
+    }    
+
     return gulp.src(bowerFiles('**/*.css'))
         .pipe(gulpif(!argv.dist, sourcemaps.init()))
         .pipe(concat('vendor.css'))
@@ -192,17 +187,28 @@ var _cssVendorBuild = function() {
         .pipe(gulp.dest(BUILD_DIR + '/css/vendor/'));
 };
 
-var _cssVendorBuildV2 = function() {    
-    return gulp.src(config.cssVendor)
-        .pipe(gulpif(!argv.dist, sourcemaps.init()))
-        .pipe(concat('vendor.css'))
-        .pipe(gulpif(argv.dist, minifyCss()))
-        .pipe(gulpif(!argv.dist, sourcemaps.write('./')))
-        .pipe(gulp.dest(BUILD_DIR + '/css/vendor/'));    
-};
-
 gulp.task('_css-vendor-build', ['_clean'], _cssVendorBuild);
 gulp.task('_css-vendor-watch-build', _cssVendorBuild);
+
+// copy vendor fonts
+var _fontsVendorCopy = function() {
+
+    return gulp.src(config.fontsVendor)        
+        .pipe(gulp.dest(BUILD_DIR + '/css/fonts/'));
+};
+
+gulp.task('_fonts-vendor-build', ['_clean'], _fontsVendorCopy);
+gulp.task('_fonts-vendor-watch-build', _fontsVendorCopy);
+
+// copy vendor fonts
+var _imagesCopy = function() {
+
+    return gulp.src(config.images)        
+        .pipe(gulp.dest(BUILD_DIR + '/assets/images/'));
+};
+
+gulp.task('_images-build', ['_clean'], _imagesCopy);
+gulp.task('_images-build-watch-build', _imagesCopy);
 
 
 // build main js loaded in bottom of page
@@ -290,13 +296,13 @@ gulp.task('_data-build', function() {
  *
  */
 
-gulp.task('build', ['_css-build', '_css-vendor-build', '_tpls-build', '_js-main-build', '_js-header-build',
-    '_js-lib-build', '_root-files-build', '_index-build', '_data-build'
+gulp.task('build', ['_css-build', '_css-vendor-build', '_fonts-vendor-build', '_tpls-build', '_js-main-build', '_js-header-build',
+    '_js-lib-build', '_root-files-build', '_index-build', '_data-build', '_images-build'
 ], function() {
-    notifier.notify({
-        'title': 'Gulp',
-        'message': 'Build completed.'
-    });
+    // notifier.notify({
+    //     'title': 'Gulp',
+    //     'message': 'Build completed.'
+    // });
     gutil.log(gutil.colors.green('... completed ...'));
 });
 
