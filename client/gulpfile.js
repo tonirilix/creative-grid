@@ -20,6 +20,7 @@ var del = require('del'),
     modRewrite = require('connect-modrewrite'),
     uglify = require('gulp-uglify'),
     minifyCss = require('gulp-minify-css'),
+    mainBowerFiles = require('gulp-main-bower-files'),
     bowerFiles = require('main-bower-files'),
     sourcemaps = require('gulp-sourcemaps'),
     notifier = require('node-notifier'),
@@ -159,7 +160,7 @@ var _cssBuild = function() {
 var _lessBuild = function() {
     var sourceLess = './source/less';
     var targetCss = './source/css';
-    return gulp.src('bower_components/bootstrap-material-design/less/material-fullpalette.less')
+    return gulp.src('bower_components/bootstrap/less/bootstrap.less')
         .pipe(less())
         .pipe(gulp.dest(BUILD_DIR + '/css/vendor/'));
 };
@@ -167,12 +168,20 @@ var _lessBuild = function() {
 
 gulp.task('_css-build', ['_clean'], _cssBuild);
 gulp.task('_css-watch-build', _cssBuild);
+// gulp.task('_less-build', ['_clean'], _lessBuild);
+// gulp.task('_less-watch-build', _lessBuild);
 
 // build vendor css
-var _cssVendorBuild = function() {
-    if (bowerFiles('**/*.css').length === 0) {
-        return;
-    }
+var _cssVendorBuild = function() {    
+    /**
+     * TODO: Dunno whay bowerFiles is not finding *.css files in bower_components
+     * @type {Array}
+     */
+    var cssFiles = ['bower_components/bootstrap/dist/css/*'];
+
+    // if (bowerFiles('**/*.css').length === 0) {
+    //     return;
+    // }
 
     return gulp.src(bowerFiles('**/*.css'))
         .pipe(gulpif(!argv.dist, sourcemaps.init()))
@@ -182,8 +191,18 @@ var _cssVendorBuild = function() {
         .pipe(gulp.dest(BUILD_DIR + '/css/vendor/'));
 };
 
-gulp.task('_css-vendor-build', ['_clean'], _cssVendorBuild);
-gulp.task('_css-vendor-watch-build', _cssVendorBuild);
+var _cssVendorBuildV2 = function() {    
+    return gulp.src(config.cssVendor)
+        .pipe(gulpif(!argv.dist, sourcemaps.init()))
+        .pipe(concat('vendor.css'))
+        .pipe(gulpif(argv.dist, minifyCss()))
+        .pipe(gulpif(!argv.dist, sourcemaps.write('./')))
+        .pipe(gulp.dest(BUILD_DIR + '/css/vendor/'));    
+};
+
+gulp.task('_css-vendor-build', ['_clean'], _cssVendorBuildV2);
+gulp.task('_css-vendor-watch-build', _cssVendorBuildV2);
+
 
 // build main js loaded in bottom of page
 var _jsMainBuild = function(cb) {
@@ -244,7 +263,8 @@ gulp.task('_root-files-build', function() {
 
 // build index
 gulp.task('_index-build', function() {
-    var hasVendorCss = bowerFiles('**/*.css').length !== 0 ? true : false;
+    // var hasVendorCss = bowerFiles('**/*.css').length !== 0 ? true : false;
+    var hasVendorCss = config.cssVendor.length !== 0 ? true : false;
 
     return gulp.src('src/index.html')
         .pipe(gulpif(hasVendorCss, htmlreplace({
@@ -289,6 +309,14 @@ gulp.task('_css-watch', ['_css-watch-build'], function() {
     notifier.notify({
         'title': 'Gulp',
         'message': 'CSS build completed.'
+    });
+    gutil.log(gutil.colors.green('... completed ...'));
+});
+
+gulp.task('_less-watch', ['less-watch-build'], function() {
+    notifier.notify({
+        'title': 'Gulp',
+        'message': 'Less build completed.'
     });
     gutil.log(gutil.colors.green('... completed ...'));
 });
