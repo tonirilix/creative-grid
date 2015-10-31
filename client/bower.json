@@ -29,6 +29,15 @@
       "main": "./modernizr.js",
       "ignore": true
     },
+    "bootstrap": {
+      "main": [
+        "dist/css/bootstrap.css",
+        "dist/css/bootstrap.map",
+        "dist/css/bootstrap-theme.css",
+        "dist/css/bootstrap-theme.css.map",
+        "dist/js/bootstrap.js"
+      ]
+    },
     "ua-parser-js": {
       "ignore": true
     },

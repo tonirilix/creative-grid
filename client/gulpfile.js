@@ -42,6 +42,7 @@ var del = require('del'),
     argv = minimist(process.argv.slice(2), {
         boolean: 'dist'
     });
+    console.log('dist mdfk', argv);
 
 /**
  *
@@ -182,7 +183,7 @@ var _cssVendorBuild = function() {
     // if (bowerFiles('**/*.css').length === 0) {
     //     return;
     // }
-
+    console.log('XDXDXD', bowerFiles('**/*.css'));
     return gulp.src(bowerFiles('**/*.css'))
         .pipe(gulpif(!argv.dist, sourcemaps.init()))
         .pipe(concat('vendor.css'))
@@ -200,8 +201,8 @@ var _cssVendorBuildV2 = function() {
         .pipe(gulp.dest(BUILD_DIR + '/css/vendor/'));    
 };
 
-gulp.task('_css-vendor-build', ['_clean'], _cssVendorBuildV2);
-gulp.task('_css-vendor-watch-build', _cssVendorBuildV2);
+gulp.task('_css-vendor-build', ['_clean'], _cssVendorBuild);
+gulp.task('_css-vendor-watch-build', _cssVendorBuild);
 
 
 // build main js loaded in bottom of page
