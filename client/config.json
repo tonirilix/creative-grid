@@ -11,5 +11,6 @@
 
     "root"    : [ "src/.htaccess", "src/favicon.ico" ],
 
-    "cssVendor" : ["bower_components/bootstrap/dist/css/*"]
+    "cssVendor" : ["bower_components/bootstrap/dist/css/*"],
+    "fontsVendor" : ["bower_components/bootstrap/dist/fonts/*"]
 }
