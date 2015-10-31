@@ -1,7 +1,8 @@
+
 <!DOCTYPE html>
-<html class="no-js">
-<head>
-    <title>Project Title</title>
+<html lang="en">
+  <head>
+        <title>Project Title</title>
     <meta charset="UTF-8">
     <meta name="keywords" content="">
     <meta name="description" content="">
@@ -17,8 +18,7 @@
     <meta property="og:image" content="">
     <meta property="og:type" content="website">
 
-    
-
+    <link rel="stylesheet" href="css/vendor/vendor.css">
     <link rel="stylesheet" href="css/style.css">
 
     <script src="scripts/priority.js"></script>
@@ -34,24 +34,50 @@
     */
     </script>
     <!-- End Google Analytics -->
-</head>
+  </head>
 
-<body>
-    <!-- begin: incompatible browser page -->
-    <div class="incompatibleBrowser">Incompatible browser page</div>
-    <!-- end: incompatible browser page -->
-    <!-- begin: loader -->
-    <div class="loader"></div>
-    <!-- end: iloader -->
-    <!-- begin: main app -->
-    <div class="container ng-cloak" ng-controller="RootCtrl">
-        <header ng-include=" 'tpls/partials/header.html' "></header>
-        <div class="main view-change-animate" ui-view></div>
-        <footer ng-include=" 'tpls/partials/footer.html' "></footer>
+  <body>
+
+    <div class="site-wrapper">
+
+      <div class="site-wrapper-inner">
+
+        <div class="cover-container">
+
+          <div class="masthead clearfix">
+            <div class="inner">
+              <h3 class="masthead-brand">Cover</h3>
+              <nav>
+                <ul class="nav masthead-nav">
+                  <li class="active"><a href="#">Home</a></li>
+                  <li><a href="#">Features</a></li>
+                  <li><a href="#">Contact</a></li>
+                </ul>
+              </nav>
+            </div>
+          </div>
+
+          <div class="inner cover">
+            <h1 class="cover-heading">Cover your page.</h1>
+            <p class="lead">Cover is a one-page template for building simple and beautiful home pages. Download, edit the text, and add your own fullscreen background photo to make it your own.</p>
+            <p class="lead">
+              <a href="#" class="btn btn-lg btn-default">Learn more</a>
+            </p>
+          </div>
+
+          <div class="mastfoot">
+            <div class="inner">
+              <p>Cover template for <a href="http://getbootstrap.com">Bootstrap</a>, by <a href="https://twitter.com/mdo">@mdo</a>.</p>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
     </div>
-    <canvas id="canvas-elem"></canvas>
-    <!-- end: main app -->
+    <canvas class="hidden" id="canvas-elem"></canvas>
     <script src="scripts/lib.js"></script>
     <script src="scripts/main.js"></script>
-</body>
+  </body>
 </html>

@@ -1,5 +1,5 @@
 {
-  "name": "angularWebpack-test",
+  "name": "creative-grid-test",
   "version": "1.0.0",
   "private": true,
   "devDependencies": {
@@ -13,9 +13,5 @@
     "webpack": "^1.10.5",
     "jasmine-core": "^2.3.4",
     "json-loader": "^0.5.2"
-  },
-  "scripts": {
-    "pretest": "npm install",
-    "test": "node node_modules/karma/bin/karma start karma.conf.js"
   }
 }

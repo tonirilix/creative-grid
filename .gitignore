@@ -1,4 +1,7 @@
 client/.sass-cache
+client/website/css/*
+client/website/scripts/*
+client/website/tpls/*
 
 *npm-debug.log*
 *node_modules*

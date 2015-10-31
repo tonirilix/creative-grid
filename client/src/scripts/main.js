@@ -26,7 +26,7 @@ angular.element(document).ready(function () {
     }
 
     // show loader
-    $('.loader').text('0%').show();
+    $('.loader').text('0%').show();    
 
     // start loader
     loader.setProgressCb(progressCb);

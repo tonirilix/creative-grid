@@ -9,5 +9,7 @@
 
     "css"     : [ "src/scss/style.scss", "src/scss/assets/assets-no-retina.scss", "src/scss/assets/assets-retina.scss" ],
 
-    "root"    : [ "src/.htaccess", "src/favicon.ico" ]
+    "root"    : [ "src/.htaccess", "src/favicon.ico" ],
+
+    "cssVendor" : ["bower_components/bootstrap/dist/css/*"]
 }
