@@ -174,8 +174,17 @@ var _cssVendorBuild = function() {
 gulp.task('_css-vendor-build', ['_clean'], _cssVendorBuild);
 gulp.task('_css-vendor-watch-build', _cssVendorBuild);
 
-gulp.task('_css-vendor-build2', ['_clean'], _cssVendorBuild);
-gulp.task('_css-vendor-watch-build2', _cssVendorBuild);
+// copy vendor fonts
+var _fontsVendorCopy = function() {
+
+    return gulp.src(config.fontsVendor)
+        .pipe(gulpif(!argv.dist, sourcemaps.init()))        
+        .pipe(gulpif(!argv.dist, sourcemaps.write('./')))
+        .pipe(gulp.dest(BUILD_DIR + '/css/fonts/'));
+};
+
+gulp.task('_fonts-vendor-build', ['_clean'], _fontsVendorCopy);
+gulp.task('_fonts-vendor-watch-build', _fontsVendorCopy);
 
 // build main js loaded in bottom of page
 var _jsMainBuild = function(cb) {
