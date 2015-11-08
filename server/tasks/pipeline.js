@@ -15,7 +15,11 @@ var tmpPath = '.tmp/public/';
 //
 // (if you're using LESS with the built-in default config, you'll want
 //  to change `assets/styles/importer.less` instead.)
-var cssFilesToInject = [
+var cssFilesToInject = [ // Load sails.io before everything else
+  'styles/bootstrap.min.css',
+  'styles/bootstrap.map',
+  'styles/bootstrap-theme.min.css',
+  'styles/bootstrap-theme.css.map',
   'styles/**/*.css'
 ];
 
@@ -26,6 +30,9 @@ var jsFilesToInject = [
 
   // Load sails.io before everything else
   'js/dependencies/sails.io.js',
+
+  // Load jquery before everything else
+  'js/dependencies/jquery-2.1.4.min.js',
 
   // Dependencies like jQuery, or Angular are brought in here
   'js/dependencies/**/*.js',
@@ -64,5 +71,5 @@ module.exports.templateFilesToInject = templateFilesToInject.map(transformPath);
 // Transform paths relative to the "assets" folder to be relative to the public
 // folder, preserving "exclude" operators.
 function transformPath(path) {
-  return (path.substring(0,1) == '!') ? ('!' + tmpPath + path.substring(1)) : (tmpPath + path);
+  return (path.substring(0, 1) == '!') ? ('!' + tmpPath + path.substring(1)) : (tmpPath + path);
 }
