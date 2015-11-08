@@ -17,9 +17,9 @@ var tmpPath = '.tmp/public/';
 //  to change `assets/styles/importer.less` instead.)
 var cssFilesToInject = [ // Load sails.io before everything else
   'styles/bootstrap.min.css',
-  'styles/bootstrap.map',
+  //'styles/bootstrap.map',
   'styles/bootstrap-theme.min.css',
-  'styles/bootstrap-theme.css.map',
+  //'styles/bootstrap-theme.css.map',
   'styles/**/*.css'
 ];
 
