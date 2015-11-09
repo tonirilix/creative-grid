@@ -1,3 +1,18 @@
+<div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content" style="padding: 20px auto">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">Feature in progress</h4>
+      </div>
+       <div class="modal-body">
+       <h4>Hi!</h4>
+      <h4>We're still doing a lot of work. Keep in touch for new updates. =D</h4>
+       </div>      
+    </div>
+  </div>
+</div>
+
 <!-- begin: incompatible browser page-->
     <!-- .incompatibleBrowser Incompatible browser page-->
     <!-- end: incompatible browser page-->
@@ -14,8 +29,8 @@
               <nav>
                 <ul class="nav masthead-nav">
                   <li class="active"><a href="#">Home</a></li>
-                  <li><a href="#">Features</a></li>
-                  <li><a href="#">Contact</a></li>
+                  <li><a href="#" data-toggle="modal" data-target=".bs-example-modal-lg">Features</a></li>
+                  <li><a href="#" data-toggle="modal" data-target=".bs-example-modal-lg">Contact</a></li>
                 </ul>
               </nav>
             </div>
@@ -38,27 +53,26 @@
         <div class="item active"><img src="/images/carousel/video-943579_1280.jpg" alt="First slide" class="first-slide">
           <div class="container">
             <div class="carousel-caption">
-              <h1>Example headline.</h1>
-              <p>Note: If you're viewing this page via a <code>file://</code> URL, the "next" and "previous" Glyphicon buttons on the left and right might not load/display properly due to web browser security rules.</p>
-              <p><a href="#" role="button" class="btn btn-lg btn-primary">Sign up today</a></p>
+              <h1>Why?</h1>
+              <p>
+                This project is intended to be a place to find really good people, media related, eager to work and near your area. We know how hard is to do this. We've been there and had those problems. So let's do it together!!
+              </p>              
             </div>
           </div>
         </div>
         <div class="item"><img src="/images/carousel/video-943579_1281.jpg" alt="Second slide" class="first-slide">
           <div class="container">
             <div class="carousel-caption">
-              <h1>Another example headline.</h1>
-              <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
-              <p><a href="#" role="button" class="btn btn-lg btn-primary">Learn more</a></p>
+              <h1>Media Team!</h1>
+              <p>A lot of great people is out there. Let's find them all :D</p>              
             </div>
           </div>
         </div>
         <div class="item"><img src="/images/carousel/video-943579_1282.jpg" alt="Third slide" class="first-slide">
           <div class="container">
             <div class="carousel-caption">
-              <h1>One more for good measure.</h1>
-              <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
-              <p><a href="#" role="button" class="btn btn-lg btn-primary">Browse gallery</a></p>
+              <h1>Models and Talents!</h1>
+              <p>We, the media guys, won't do everything, we also need people to be in front of the cameras \m/</p>              
             </div>
           </div>
         </div>
@@ -70,32 +84,9 @@
     ==================================================
     -->
     <!-- Wrap the rest of the page in another container to center all the content.-->
-    <div class="container marketing">
-      <!-- Three columns of text below the carousel-->
-      <div class="row">
-        <div class="col-lg-4"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Generic placeholder image" width="140" height="140" class="img-circle">
-          <h2>Heading</h2>
-          <p>Donec sed odio dui. Etiam porta sem malesuada magna mollis euismod. Nullam id dolor id nibh ultricies vehicula ut id elit. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Praesent commodo cursus magna.</p>
-          <p><a href="#" role="button" class="btn btn-default">View details »</a></p>
-        </div>
-        <!-- /.col-lg-4-->
-        <div class="col-lg-4"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Generic placeholder image" width="140" height="140" class="img-circle">
-          <h2>Heading</h2>
-          <p>Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Cras mattis consectetur purus sit amet fermentum. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh.</p>
-          <p><a href="#" role="button" class="btn btn-default">View details »</a></p>
-        </div>
-        <!-- /.col-lg-4-->
-        <div class="col-lg-4"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Generic placeholder image" width="140" height="140" class="img-circle">
-          <h2>Heading</h2>
-          <p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
-          <p><a href="#" role="button" class="btn btn-default">View details »</a></p>
-        </div>
-        <!-- /.col-lg-4-->
-      </div>
-      <!-- /.row-->
-      <!-- START THE FEATURETTES-->
-      <hr class="featurette-divider">
-      <div class="row featurette">
+    <div class="container marketing">      
+      <!-- START THE FEATURETTES-->      
+      <!-- <div class="row featurette">
         <div class="col-md-7">
           <h2 class="featurette-heading">First featurette heading. <span class="text-muted">It'll blow your mind.</span></h2>
           <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
@@ -118,11 +109,11 @@
         </div>
         <div class="col-md-5"><img data-src="holder.js/500x500/auto" alt="Generic placeholder image" class="featurette-image img-responsive center-block"></div>
       </div>
-      <hr class="featurette-divider">
+      <hr class="featurette-divider"> -->
       <!-- /END THE FEATURETTES-->
       <!-- FOOTER-->
       <footer>
         <p class="pull-right"><a href="#">Back to top</a></p>
-        <p>© 2014 Company, Inc. · <a href="#">Privacy</a> · <a href="#">Terms.</a></p>
+        <p><a href="https://github.com/tonirilix/creative-grid">© 2015 Create Grid</a> is an original idea from <a href="http://movie-nights.ca">Movie Nights</a>· Made with <span class="glyphicon glyphicon-heart" aria-hidden="true"></span> by <a href="http://jesusmontes.mx">@tonirilix</a> </p>
       </footer>
     </div>
